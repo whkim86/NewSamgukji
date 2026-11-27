@@ -11,3 +11,6 @@
 
 ## v0.2.0-alpha.1
 DEM 연동 준비 (실제 데이터 미확보).
+
+## v0.2.0-alpha.2
+- Visual terrain, mobile input, marker readability, DEM cache and audit workflow; partial verification only.

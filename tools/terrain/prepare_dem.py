@@ -8,7 +8,7 @@ from rasterio.transform import from_bounds
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 BOUNDS=[112,33.5,114.5,35.2]
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--cache',default='dem-cache');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--cache',default='dem-cache');parser.add_argument('--download-only',action='store_true');args=parser.parse_args()
     cache=pathlib.Path(args.cache);cache.mkdir(exist_ok=True);paths=[];urls=[]
     for lat in range(33,36):
         for lon in range(112,115):
@@ -16,6 +16,7 @@ def main():
             if not p.exists():
                 tmp=p.with_suffix('.part');urllib.request.urlretrieve(url,tmp);tmp.replace(p)
             paths.append(p);urls.append(url)
+    if args.download_only:return
     from contextlib import ExitStack
     with ExitStack() as stack:
         src=[stack.enter_context(rasterio.open(p)) for p in paths]
