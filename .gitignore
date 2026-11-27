@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.vite/
+
+.tooling/
+dem-cache/
+cover-cache/
+verification/

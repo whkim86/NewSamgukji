@@ -1,1 +1,5 @@
 export function projection(bounds,size=1200){const [w,s,e,n]=bounds;const rad=Math.PI/180;const width=(e-w)*rad*6371008.8*Math.cos((s+n)/2*rad),depth=(n-s)*rad*6371008.8,scale=size/Math.max(width,depth);return {width:width*scale,depth:depth*scale,scale,toWorld(lon,lat){return [(lon-w)/(e-w)*width*scale-width*scale/2,(n-lat)/(n-s)*depth*scale-depth*scale/2]}}}
+
+export function inverseProjection(bounds,p,x,z){const [w,s,e,n]=bounds;return [w+(x/p.width+.5)*(e-w),n-(z/p.depth+.5)*(n-s)]}
+export function distanceKm(a,b){const r=Math.PI/180, dlat=(b[1]-a[1])*r,dlon=(b[0]-a[0])*r;const h=Math.sin(dlat/2)**2+Math.cos(a[1]*r)*Math.cos(b[1]*r)*Math.sin(dlon/2)**2;return 12742.0176*Math.asin(Math.sqrt(Math.max(0,Math.min(1,h))))}
+export function projectionAudit(bounds,steps=10){const p=projection(bounds),[w,s,e,n]=bounds;let max=0;for(let j=0;j<=steps;j++)for(let i=0;i<steps;i++){const a=[w+(e-w)*i/steps,s+(n-s)*j/steps],b=[a[0]+(e-w)/steps,a[1]];const x=p.toWorld(...a),y=p.toWorld(...b);max=Math.max(max,Math.abs(Math.hypot(x[0]-y[0],x[1]-y[1])/p.scale/1000/distanceKm(a,b)-1))}return max}

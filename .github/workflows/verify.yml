@@ -1,0 +1,46 @@
+name: Verify candidate without deployment
+on:
+  push:
+    branches: [codex/v3-stabilization]
+  workflow_dispatch:
+    inputs:
+      benchmark:
+        type: boolean
+        default: false
+        description: Run 24 one-minute benchmark cases
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install and build
+        shell: bash
+        run: |
+          mkdir -p verification
+          set -o pipefail
+          set -e
+          { if [ -f package-lock.json ]; then npm ci; else npm install; fi
+            npm test && node tools/terrain/audit_data.mjs && npm run build && npm run test:dist; } 2>&1 | tee verification/build.log
+      - name: Browser tools
+        run: |
+          npx playwright install --with-deps chromium
+      - name: Browser integration
+        run: |
+          npm exec vite -- preview --host 127.0.0.1 --port 4173 > verification/server.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
+          node tools/browser/check.mjs
+          if [ "${{ inputs.benchmark }}" = "true" ]; then node tools/browser/benchmark.mjs; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: candidate-verification
+          path: |
+            verification/
+            dist/
+            package-lock.json

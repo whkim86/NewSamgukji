@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {TileCache,tileSamples} from '../src/core/tile-cache.js';
+test('cache deduplicates and evicts oldest settled entry',async()=>{const c=new TileCache(2);let calls=0;const a=c.get('a',()=>++calls);assert.equal(a,c.get('a',()=>++calls));await a;await c.get('b',()=>2);await c.get('c',()=>3);assert.equal(c.entries.size,2);assert.ok(!c.entries.has('a'));assert.equal(calls,1)});
+test('pending cache bounded and failure retryable',async()=>{const c=new TileCache(1);const p=c.get('a',()=>{throw Error('fail')});await assert.rejects(c.get('b',()=>2),/busy/);await assert.rejects(p,/fail/);assert.equal(await c.get('b',()=>2),2)});
+test('adjacent tiles share exact boundary samples',()=>{const a=Float32Array.from({length:25},(_,i)=>i);const l=tileSamples(a,5,0,0,2),r=tileSamples(a,5,2,0,2);for(let j=0;j<3;j++)assert.equal(l[j*3+2],r[j*3])});

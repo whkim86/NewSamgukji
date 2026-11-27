@@ -18,7 +18,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-audit --no-fund
+      - name: Release version gate
+        run: node -e "if (require('./package.json').version.includes('-')) process.exit(1)"
+      - run: if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
       - run: npm test
       - run: npm run build
       - run: npm run test:dist

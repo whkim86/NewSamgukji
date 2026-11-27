@@ -1,0 +1,6 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {projectionAudit} from '../src/geo/coordinates.js';import {validateLayer} from '../src/geo/layers.js';import {classify,movementCost,terrainSlope} from '../src/terrain/cost.js';
+test('regional projection east-west error',()=>assert.ok(projectionAudit([112,33.5,114.5,35.2])<.02));
+test('layer rejects invalid and out of bounds lines',()=>{const f=coordinates=>({geometry:{type:'LineString',coordinates}});assert.equal(validateLayer({type:'FeatureCollection',features:[f([[112,34],[113,34]]),f([[0,0],[113,34]])]},[112,33.5,114.5,35.2]).length,1)});
+test('movement cost and slope independent of visual factor',()=>{assert.equal(movementCost(36,'road'),1);assert.equal(movementCost(1,'cliff'),Infinity);assert.equal(classify({slope:.8,elevation:100}),'cliff');assert.equal(classify({slope:.01,elevation:100}),'plain');assert.equal(terrainSlope((x,z)=>x*2,{scale:.5},0,0,1,1),1)});
+import {summarizeFrames} from '../src/core/performance.js';
+test('frame metrics use elapsed time and nearest rank',()=>{const s=summarizeFrames([10,20,30,40]);assert.equal(s.averageFps,40);assert.equal(s.minFps,25);assert.equal(s.p95Ms,40);assert.equal(summarizeFrames([]),null)});

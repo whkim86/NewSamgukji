@@ -24,3 +24,9 @@ DEM 취득 및 배포: docs/TERRAIN_DATA_SOURCES.md 참조.
 
 ### alpha.2 update
 Upload update ZIP contents to existing repository root, preserving all existing DEM files under public/assets/terrain/henan-central. No deletions. Pages workflow builds on push. Optional maintainer audit: Actions > Validate published DEM > Run workflow; artifact dem-validation.json. Roll back via reverting update commit. Full source ZIP excludes DEM binaries because unavailable locally; it is not a standalone actual-DEM build.
+
+## v0.5.0-dev.1
+Experimental source snapshot, not a verified deployment. Preserve existing DEM assets. Run npm install, npm test, npm run build and npm run test:dist before deployment. Local layer conversion: python tools/terrain/prepare_layers.py INPUT river --source SOURCE --license LICENSE (requires shapely; WGS84 input). Original gate generator requires trimesh.
+
+### dev.2 업데이트
+기존 DEM 파일을 보존하고 변경 ZIP 내부 파일만 저장소에 반영한다. Actions의 Acquire modern geographic layers를 수동 실행하면 현대 수계/도로 artifact를 생성하도록 구성했다(미검증). 성공 시 출처와 내용을 검토한 뒤 public/data에 JSON을 추가한다. 기존 Pages workflow로 빌드한다. 실패 시 dev.2 변경 커밋을 되돌린다. 현재 정식 배포 후보가 아니다.

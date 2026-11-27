@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {projection,inverseProjection,distanceKm} from '../src/geo/coordinates.js';
+test('projection roundtrip',()=>{const b=[112,33.5,114.5,35.2],p=projection(b);for(const a of [[112,33.5],[114.5,35.2],[113.85,34.02]]){const r=inverseProjection(b,p,...p.toWorld(...a));assert.ok(r.every((v,i)=>Math.abs(v-a[i])<1e-10))}});
+test('geodesic distance symmetry and known equator arc',()=>{assert.equal(distanceKm([0,0],[0,0]),0);assert.ok(Math.abs(distanceKm([0,0],[1,0])-111.195)<.001);const a=[112.45,34.62],b=[113.85,34.02];assert.equal(distanceKm(a,b),distanceKm(b,a));assert.ok(distanceKm(a,b)>140&&distanceKm(a,b)<150)});

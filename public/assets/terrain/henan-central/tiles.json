@@ -1,0 +1,492 @@
+{
+  "version": 1,
+  "source": "Copernicus GLO-90",
+  "resolutions": {
+    "129": [
+      {
+        "id": 0,
+        "x": 0,
+        "z": 0,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/0.f32",
+        "bytes": 4356,
+        "sha256": "a3f22cff1889faaefc7d0eed53b52a6dc595e04ecd4607e0ef9b2c7deda44891"
+      },
+      {
+        "id": 1,
+        "x": 32,
+        "z": 0,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/1.f32",
+        "bytes": 4356,
+        "sha256": "0f83a6dd11e11eac88e9e09d5e234e0f558157fd384eb451f78cba581e252677"
+      },
+      {
+        "id": 2,
+        "x": 64,
+        "z": 0,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/2.f32",
+        "bytes": 4356,
+        "sha256": "69fea9fa261e63a6becca7940874744970f6923f23949b9f6d71324d3e811768"
+      },
+      {
+        "id": 3,
+        "x": 96,
+        "z": 0,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/3.f32",
+        "bytes": 4356,
+        "sha256": "a55243d17228ceb04a3c9ac601765985832b7e8749d6aee6f397449c809d7d2e"
+      },
+      {
+        "id": 4,
+        "x": 0,
+        "z": 32,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/4.f32",
+        "bytes": 4356,
+        "sha256": "4ee1abc9c822a5b73327a78af4b38cf7651f0c152c753ac7b3f067bb33f3c90c"
+      },
+      {
+        "id": 5,
+        "x": 32,
+        "z": 32,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/5.f32",
+        "bytes": 4356,
+        "sha256": "d164fa48d3d87c21660ef156a7f1b2d47b24f6a208de0d730e8de8fa64ddb59a"
+      },
+      {
+        "id": 6,
+        "x": 64,
+        "z": 32,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/6.f32",
+        "bytes": 4356,
+        "sha256": "1d58fa6f7e0715b1adfbb67b39a9c5977eb3f142735ddccd77e78d44be212986"
+      },
+      {
+        "id": 7,
+        "x": 96,
+        "z": 32,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/7.f32",
+        "bytes": 4356,
+        "sha256": "df6ac2aaec2bae36e5deabb41f4961b827fa5e5f4300377f787c9c3d8164b270"
+      },
+      {
+        "id": 8,
+        "x": 0,
+        "z": 64,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/8.f32",
+        "bytes": 4356,
+        "sha256": "d98f747ea78240a0f8e82374a9489ee603ff7ecc399f922fa0c6f5ad9389c41a"
+      },
+      {
+        "id": 9,
+        "x": 32,
+        "z": 64,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/9.f32",
+        "bytes": 4356,
+        "sha256": "c9c2c722d2c5552b53a8d3f689a8886ccc0a530c10721021376ca39cc6472f92"
+      },
+      {
+        "id": 10,
+        "x": 64,
+        "z": 64,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/10.f32",
+        "bytes": 4356,
+        "sha256": "c28e1a9f270b1fab7ed36acd2073a9ee4b21126932186fb4d355b5f173b180ce"
+      },
+      {
+        "id": 11,
+        "x": 96,
+        "z": 64,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/11.f32",
+        "bytes": 4356,
+        "sha256": "7c34a94138c9985690caebc2870a4227cc568f49122a8e0c32a955beebb7762a"
+      },
+      {
+        "id": 12,
+        "x": 0,
+        "z": 96,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/12.f32",
+        "bytes": 4356,
+        "sha256": "6b2fd85020e8d5f9fde608bcf76f33656a115b256ff2f990e7468ec3ef9680ff"
+      },
+      {
+        "id": 13,
+        "x": 32,
+        "z": 96,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/13.f32",
+        "bytes": 4356,
+        "sha256": "5deaf229d693bb59c44ee17ee0e72e1b3185ad79dc3dbc34da184c4cd3633c81"
+      },
+      {
+        "id": 14,
+        "x": 64,
+        "z": 96,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/14.f32",
+        "bytes": 4356,
+        "sha256": "0d2eca243a93ba86222e53a7c0919deeef8bfff34ad392cece6e2b2eff504718"
+      },
+      {
+        "id": 15,
+        "x": 96,
+        "z": 96,
+        "step": 32,
+        "size": 33,
+        "path": "tiles/129/15.f32",
+        "bytes": 4356,
+        "sha256": "2870aaea8de3622fe086b9e3b51c93a56767423022c43dc15b8a377b4edda154"
+      }
+    ],
+    "257": [
+      {
+        "id": 0,
+        "x": 0,
+        "z": 0,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/0.f32",
+        "bytes": 16900,
+        "sha256": "f303301260b5b205f2084d086d00a984c14043926aa838ac49fdefcdb6f4be49"
+      },
+      {
+        "id": 1,
+        "x": 64,
+        "z": 0,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/1.f32",
+        "bytes": 16900,
+        "sha256": "7adac183924d70073f32c2dcf6f37cb502bea8f10cb023ba9f78781bd1430280"
+      },
+      {
+        "id": 2,
+        "x": 128,
+        "z": 0,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/2.f32",
+        "bytes": 16900,
+        "sha256": "fb00b48f4f446e7160e3cb8a8be1f1d74066f726edc0cead56cb4ba492504464"
+      },
+      {
+        "id": 3,
+        "x": 192,
+        "z": 0,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/3.f32",
+        "bytes": 16900,
+        "sha256": "2cac5d69f76ad9a9cc26203b6398c68b6419f57f766a0032b49e6a16266e6bb0"
+      },
+      {
+        "id": 4,
+        "x": 0,
+        "z": 64,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/4.f32",
+        "bytes": 16900,
+        "sha256": "b5b45bd5cac91a85a533315e83fd2e1662a4ac3c73629fe29734a1bb32ae39b4"
+      },
+      {
+        "id": 5,
+        "x": 64,
+        "z": 64,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/5.f32",
+        "bytes": 16900,
+        "sha256": "90bd4070c6cd1cde41114a833efbe1efb9a49dbe2b214a79b442c5d97ad60bab"
+      },
+      {
+        "id": 6,
+        "x": 128,
+        "z": 64,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/6.f32",
+        "bytes": 16900,
+        "sha256": "dbfce936db87fe50cbb3dd08ed6118d90b0ed33374f103f7a18c9bf8da92fbdc"
+      },
+      {
+        "id": 7,
+        "x": 192,
+        "z": 64,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/7.f32",
+        "bytes": 16900,
+        "sha256": "d8cf72b52ee43bd100cc48f5e8ddc5b96d430cb156ac42557ec575eef67cafc4"
+      },
+      {
+        "id": 8,
+        "x": 0,
+        "z": 128,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/8.f32",
+        "bytes": 16900,
+        "sha256": "4310cdc82a39a4ea9e8ecfdbad0f0948c05e4ae3b10f8ab4893e5d3b1b44361d"
+      },
+      {
+        "id": 9,
+        "x": 64,
+        "z": 128,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/9.f32",
+        "bytes": 16900,
+        "sha256": "2d5887ccbb8f623d201b697057b4ecd7f6f3d8ec728e746e70de87e2209dfd5b"
+      },
+      {
+        "id": 10,
+        "x": 128,
+        "z": 128,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/10.f32",
+        "bytes": 16900,
+        "sha256": "1c8c728dd03c9bd85bd91dd9bb40319d8509e657fd8815d866134bd67fb48f83"
+      },
+      {
+        "id": 11,
+        "x": 192,
+        "z": 128,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/11.f32",
+        "bytes": 16900,
+        "sha256": "20bee6189c85f0ecae3de2f998527412dcf03796ef2ca9ecee1893c10c85476b"
+      },
+      {
+        "id": 12,
+        "x": 0,
+        "z": 192,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/12.f32",
+        "bytes": 16900,
+        "sha256": "a76511e9f23893edd8e55bef2302cf5131f26984a9b9ac2a078d21bfdb01578c"
+      },
+      {
+        "id": 13,
+        "x": 64,
+        "z": 192,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/13.f32",
+        "bytes": 16900,
+        "sha256": "fb21928c1c771fd4761a2069f883f17550cb3115f09f0e16ce8f5c4ebf7a36a8"
+      },
+      {
+        "id": 14,
+        "x": 128,
+        "z": 192,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/14.f32",
+        "bytes": 16900,
+        "sha256": "e97b1551c343f8ee62adc282d3413eb9290a55cbfd08a5c6bddcf2786a26b547"
+      },
+      {
+        "id": 15,
+        "x": 192,
+        "z": 192,
+        "step": 64,
+        "size": 65,
+        "path": "tiles/257/15.f32",
+        "bytes": 16900,
+        "sha256": "93f1f4d40700d0738a15abf37401fcc4cb3131db6fdc16a8b0bce65abd1ed6e2"
+      }
+    ],
+    "513": [
+      {
+        "id": 0,
+        "x": 0,
+        "z": 0,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/0.f32",
+        "bytes": 66564,
+        "sha256": "b4c928eb1cf5d83cec4fb75aabed639e41598cf14a26dd45a1e6508bf1b2dfe6"
+      },
+      {
+        "id": 1,
+        "x": 128,
+        "z": 0,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/1.f32",
+        "bytes": 66564,
+        "sha256": "0f2cecae8d34430ee5d9918e8bab7c9a74c4afa7704d6f69747e0ab842b8e6d1"
+      },
+      {
+        "id": 2,
+        "x": 256,
+        "z": 0,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/2.f32",
+        "bytes": 66564,
+        "sha256": "9ff16a9baf410d963a09562b7a1172c536f8ad14d18af5e0d6c1203afddb14a5"
+      },
+      {
+        "id": 3,
+        "x": 384,
+        "z": 0,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/3.f32",
+        "bytes": 66564,
+        "sha256": "2b2d96468f6863f6103cb18afadab4863b33c4468ac692894ac3ef7350300d7a"
+      },
+      {
+        "id": 4,
+        "x": 0,
+        "z": 128,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/4.f32",
+        "bytes": 66564,
+        "sha256": "58c45ec37ba3bf405f43e9e76691d63581181e5cc54bd9fd62f1f494a7ec369e"
+      },
+      {
+        "id": 5,
+        "x": 128,
+        "z": 128,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/5.f32",
+        "bytes": 66564,
+        "sha256": "ac47b9edc9bbba04a53e8f386e532e36d9eb8dc63cc5580e8f020546cb329288"
+      },
+      {
+        "id": 6,
+        "x": 256,
+        "z": 128,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/6.f32",
+        "bytes": 66564,
+        "sha256": "aa966bde2ebee3a35551a70bde3395663a2e8dbbe35e3a53e8fab15f4cb96f4f"
+      },
+      {
+        "id": 7,
+        "x": 384,
+        "z": 128,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/7.f32",
+        "bytes": 66564,
+        "sha256": "66c684f3aaf854fc08fc44cb7d47bba8959778e7ab170303f1efb866d027c1d0"
+      },
+      {
+        "id": 8,
+        "x": 0,
+        "z": 256,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/8.f32",
+        "bytes": 66564,
+        "sha256": "92afca4c9271661849206969517f3d70363e52dbbae0d793b6921696db51220e"
+      },
+      {
+        "id": 9,
+        "x": 128,
+        "z": 256,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/9.f32",
+        "bytes": 66564,
+        "sha256": "29ed1ef3fcd6008f271f4932a16fd23af1ef14e012006fe458b0963531bf4cb6"
+      },
+      {
+        "id": 10,
+        "x": 256,
+        "z": 256,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/10.f32",
+        "bytes": 66564,
+        "sha256": "f35798ba1391badec4ead61b1f6859527430aa0bdfcf2c3fb19e637ec6664d56"
+      },
+      {
+        "id": 11,
+        "x": 384,
+        "z": 256,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/11.f32",
+        "bytes": 66564,
+        "sha256": "47bc6224bafbdbce5f3a5c1500204cf4f68dd5be512b6db4cee940ded7833bc7"
+      },
+      {
+        "id": 12,
+        "x": 0,
+        "z": 384,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/12.f32",
+        "bytes": 66564,
+        "sha256": "ba0385136e3e7faef21a23755dff03408f11a68dc0d33b330c08c52919df019c"
+      },
+      {
+        "id": 13,
+        "x": 128,
+        "z": 384,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/13.f32",
+        "bytes": 66564,
+        "sha256": "c4b6354bc7bc7ca96fb44ce512fd95f898c20a105ac5abd7c38521932f8fbc57"
+      },
+      {
+        "id": 14,
+        "x": 256,
+        "z": 384,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/14.f32",
+        "bytes": 66564,
+        "sha256": "b3b580fee7cb18b33c56d38ac0fe0f73e1d46daf3ac32104df3dca3e74c65e89"
+      },
+      {
+        "id": 15,
+        "x": 384,
+        "z": 384,
+        "step": 128,
+        "size": 129,
+        "path": "tiles/513/15.f32",
+        "bytes": 66564,
+        "sha256": "a80d612869effc3ad9b72694a9221968db2833d7bedc4ae5d21e16753e0bc5fe"
+      }
+    ]
+  }
+}

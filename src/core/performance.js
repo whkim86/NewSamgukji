@@ -1,0 +1,1 @@
+export function summarizeFrames(ms){const a=ms.filter(x=>Number.isFinite(x)&&x>0).sort((a,b)=>a-b);if(!a.length)return null;const mean=a.reduce((s,x)=>s+x,0)/a.length;return {averageFps:1000/mean,minFps:1000/a.at(-1),meanMs:mean,p95Ms:a[Math.ceil(a.length*.95)-1],samples:a.length}}

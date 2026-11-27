@@ -1,0 +1,20 @@
+name: Validate published DEM
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy==1.26.4 rasterio==1.4.3
+      - run: python tools/terrain/prepare_dem.py --download-only
+      - run: python tools/terrain/validate_dem.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dem-validation
+          path: dem-validation.json

@@ -3,3 +3,5 @@
 #terrainPanel{position:absolute;z-index:1;bottom:8px;left:8px;right:8px;background:#202923dd;padding:8px;font-size:12px}#terrainPanel select{margin-right:5px}#terrainPanel small{display:block;font-size:10px;color:#c5c9ba} #terrainInfo{margin:5px 0}
 
 .terrainActions{display:inline-flex;align-items:center;gap:8px}.terrainActions button{width:auto;margin:0;padding:5px 9px}.terrainActions label{display:inline-flex;align-items:center}.touchHelp{display:none}#viewport{touch-action:none}#terrainPanel{max-width:720px}#terrainPanel select{min-height:30px}@media(pointer:coarse){.touchHelp{display:block}.desktopHelp{display:none}#terrainPanel select,.terrainActions button{min-height:36px}}@media(max-width:800px){header{flex-wrap:wrap;padding:8px}header strong{font-size:14px}#terrainPanel{font-size:11px}#terrainPanel small{font-size:9px}footer{padding:8px}}
+
+#togglePanel{width:auto;margin:0 0 5px;padding:5px 10px}#terrainPanel{max-height:65%;overflow:auto}#coverStatus{position:static!important;overflow-wrap:anywhere}#panelContents[hidden]{display:none}@media(max-width:800px){#terrainPanel{max-height:50%}footer{font-size:10px}.touchHelp{max-width:70%}}

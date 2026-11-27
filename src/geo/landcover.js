@@ -1,0 +1,4 @@
+// ESA WorldCover class codes; modern land cover, not historical reconstruction.
+export function validateCover(d){if(!d||d.source!=='ESA WorldCover 2021'||!d.license||!Array.isArray(d.bounds)||d.bounds.length!==4||!d.bounds.every(Number.isFinite)||d.bounds[0]>=d.bounds[2]||d.bounds[1]>=d.bounds[3]||!Number.isInteger(d.width)||!Number.isInteger(d.height)||d.width<1||d.height<1||d.width*d.height>1000000||!Array.isArray(d.classes)||d.classes.length!==d.width*d.height||!d.classes.every(c=>[0,10,20,30,40,50,60,70,80,90,95,100].includes(c)))throw Error('invalid land cover');return d}
+export function coverAt(d,lon,lat){const [w,s,e,n]=d.bounds;if(lon<w||lon>e||lat<s||lat>n)return null;return d.classes[Math.min(d.height-1,Math.floor((n-lat)/(n-s)*d.height))*d.width+Math.min(d.width-1,Math.floor((lon-w)/(e-w)*d.width))]}
+export function coverType(code){return code===10?'forest':code===90||code===95?'wetland':undefined}

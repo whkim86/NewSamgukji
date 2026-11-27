@@ -1,0 +1,1 @@
+export const presets={LOW:{resolution:129,pixel:1,shadow:false,map:512,near:10000,far:35000,model:1500},MEDIUM:{resolution:257,pixel:1.5,shadow:true,map:1024,near:20000,far:60000,model:3000},HIGH:{resolution:513,pixel:2,shadow:true,map:2048,near:35000,far:90000,model:6000}};

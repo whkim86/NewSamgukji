@@ -1,18 +1,23 @@
 {
   "name": "new-samgukji",
-  "version": "0.2.0-alpha.2",
+  "version": "0.5.0-dev.3",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "test": "node --test tests/*.test.js",
-    "test:dist": "node tests/dist-check.js"
+    "test:dist": "node tests/dist-check.js",
+    "test:browser": "node tools/browser/check.mjs",
+    "test:benchmark": "node tools/browser/benchmark-v3.mjs",
+    "test:data": "node tools/terrain/audit_data.mjs",
+    "test:stability": "node tools/browser/stability.mjs"
   },
   "dependencies": {
     "three": "0.170.0"
   },
   "devDependencies": {
+    "playwright": "1.51.1",
     "vite": "5.4.21"
   }
 }
