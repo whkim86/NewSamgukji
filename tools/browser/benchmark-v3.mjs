@@ -3,13 +3,17 @@ import {mkdir,writeFile} from 'node:fs/promises';
 await mkdir('verification',{recursive:true});
 const browser=await chromium.launch({headless:false,args:['--enable-webgl','--disable-background-timer-throttling','--disable-renderer-backgrounding','--disable-backgrounding-occluded-windows']});
 const results=[],errors=[];let environment;
+const counts=(process.env.BENCHMARK_COUNTS||'100,500,1000,5000').split(',');
+if(counts.some(n=>!['100','500','1000','5000'].includes(n)))throw Error('unsupported benchmark count');
+const output=process.env.BENCHMARK_OUTPUT||'benchmark-v3.json';
+if(!/^[a-z0-9-]+\.json$/.test(output))throw Error('invalid output filename');
 try{
  const page=await browser.newPage({viewport:{width:1920,height:1080}});
  page.on('pageerror',e=>errors.push(String(e)));
  const loading=Date.now();await page.goto((process.env.GAME_URL||'http://127.0.0.1:4174/')+'?verify=1');
  await page.waitForFunction(()=>window.__samgukji?.snapshot().models?.loaded===8&&window.__samgukji.snapshot().tiles?.pending===0);
  environment=await page.evaluate(()=>{const gl=document.querySelector('canvas').getContext('webgl2'),ext=gl.getExtension('WEBGL_debug_renderer_info');return{renderer:gl.getParameter(ext.UNMASKED_RENDERER_WEBGL),vendor:gl.getParameter(ext.UNMASKED_VENDOR_WEBGL),userAgent:navigator.userAgent,viewport:[innerWidth,innerHeight],devicePixelRatio}});environment.initialLoadMs=Date.now()-loading;
- for(const quality of ['LOW','MEDIUM','HIGH'])for(const count of ['100','500','1000','5000']){
+ for(const quality of ['LOW','MEDIUM','HIGH'])for(const count of counts){
   await page.selectOption('#quality',quality);await page.selectOption('#stress',count);
   await page.waitForFunction(n=>window.__samgukji.snapshot().models?.instances===Number(n)&&window.__samgukji.snapshot().models?.loaded===8,count);
   for(const moving of [false,true]){
@@ -23,10 +27,10 @@ try{
      requestAnimationFrame(frame)})
    },moving);
    results.push({quality,count:Number(count),moving,...result});
-   await writeFile('verification/benchmark-v3.json',JSON.stringify({environment,errors,results},null,2));
-   console.log(`${results.length}/24 ${quality} ${count} ${moving?'moving':'static'}: ${result.averageFps.toFixed(1)} FPS, P95 ${result.p95Ms.toFixed(1)}ms`);
+   await writeFile(`verification/${output}`,JSON.stringify({environment,errors,results},null,2));
+   console.log(`${results.length}/${counts.length*6} ${quality} ${count} ${moving?'moving':'static'}: ${result.averageFps.toFixed(1)} FPS, P95 ${result.p95Ms.toFixed(1)}ms`);
   }
  }
  await page.screenshot({path:'verification/benchmark-final.png'});
-}finally{await browser.close();await writeFile('verification/benchmark-v3.json',JSON.stringify({environment,errors,results},null,2))}
+}finally{await browser.close();await writeFile(`verification/${output}`,JSON.stringify({environment,errors,results},null,2))}
 if(errors.length)process.exitCode=1;

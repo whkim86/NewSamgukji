@@ -1,6 +1,6 @@
 {
   "name": "new-samgukji",
-  "version": "0.5.0-dev.3",
+  "version": "0.5.0-rc.1",
   "private": true,
   "type": "module",
   "scripts": {
