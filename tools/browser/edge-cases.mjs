@@ -24,8 +24,9 @@ try{
   const p=await browser.newPage({viewport:{width:1920,height:1080}});await p.goto(base+'?verify=1');await p.waitForFunction(()=>window.__samgukji?.snapshot().models?.loaded===8);
   const b=await p.locator('#viewport canvas').boundingBox();await p.mouse.move(b.x+b.width*.7,b.y+b.height*.3);
   const before=await p.evaluate(()=>window.__samgukji.snapshot());
-  for(let i=0;i<90;i++){await p.mouse.wheel(0,-120);await p.waitForTimeout(15)}await p.waitForTimeout(400);
-  const after=await p.evaluate(()=>window.__samgukji.snapshot());const dist=s=>Math.hypot(...s.camera.map((v,i)=>v-s.target[i]));assert.ok(dist(after)<dist(before)*.05);assert.ok(after.camera[1]>=after.target[1]);assert.equal(await p.locator('#status').isHidden(),true);await p.close();
+  await p.mouse.down();await p.mouse.move(b.x+b.width*.7+40,b.y+b.height*.3+20,{steps:8});await p.mouse.up();await p.waitForTimeout(300);assert.notDeepEqual((await p.evaluate(()=>window.__samgukji.snapshot())).target,before.target);
+  for(let i=0;i<240;i++){await p.mouse.wheel(0,-120);await p.waitForTimeout(15)}await p.waitForTimeout(400);
+  const after=await p.evaluate(()=>window.__samgukji.snapshot());const dist=s=>Math.hypot(...s.camera.map((v,i)=>v-s.target[i]));assert.ok(dist(after)<.1);assert.ok(after.camera[1]>=after.target[1]);assert.equal(await p.locator('#status').isHidden(),true);await p.close();
  });
 }finally{await browser.close();await writeFile('verification/edge-cases.json',JSON.stringify({results},null,2))}
 console.log(JSON.stringify(results));if(results.some(r=>!r.pass))process.exitCode=1;
