@@ -32,3 +32,8 @@
 - 장애/제약: 의존성 및 lockfile 미확보, 실제 GitHub 저장소 권한/배포 없음. bootstrap 동적 import 실패 대응 추가, HTML 자체 실패는 대응 불가.
 - 임시 결정: 공개 저장소, main 브랜치, Node 22 CI, 상대 base, npm install 사용. CDN 대신 빌드 번들 제공 예정. 단일 HTML은 이전 버전 그대로 유지.
 - 미구현: PRE02 이후 전부. 질문: Pages 실제 URL 및 Actions 로그, 화면/FPS/콘솔 결과 요청. 승인 후 다음 단계.
+
+## PRE-STEP 01-B 사용자 확인 추가
+2026-11-27 사용자 제공 모바일 화면: Pages 주소 접속 성공, v0.1.2 가상 지형 표시, 표시 FPS 60.0. 지속 FPS, PC, 조작, 콘솔, 그림자는 미검증.
+## PRE-STEP 02-A / v0.2.0-alpha.1 (부분 완료)
+기존 ZIP 기반, 실제 저장소 동기화 미검증. Copernicus GLO-90 선정, 출처/조건은 TERRAIN_DATA_SOURCES.md 참조. DNS 실패로 원본/가공 DEM 없음. 가상 모드 유지. 신규 DEM loader, mesh, 좌표 변환, 지역 설정, Python 변환, 별도 수동 Actions 데이터 생성, UI 해상도/배율/모드 추가. 가상 강은 DEM 모드에서 숨김. 기본 257, 1배, 중심 위도 근사 좌표계, 마커는 검증 전 근사치. 1025 및 수계 미구현. 결측은 보간 강행 없이 거부. 신규 자동 테스트 2개 및 기존 3개 통과; JS 구문 검사 및 Python 구문 검사 통과. 최초 신규 테스트 구문 오류 수정. Vite 미설치로 빌드 실패. 실제 DEM 고도/방향/마커 정확도, 브라우저, FPS, 스크린샷, Actions 모두 미검증. lockfile 없음. 기존 Pages workflow 및 preview 보존. 데이터 생성 workflow 성공 여부와 실제 지형 확인 필요. PRE02-B 진행 금지. 기획실 질문: 근사 투영/마커 허용 및 90m 데이터 채택 확인.

@@ -19,3 +19,5 @@ preview/index.html을 브라우저로 열기. 인터넷 및 CDN 접근 필요. �
 
 ## v0.1.2 정식 웹 배포
 GitHub Pages 배포 및 업데이트: [docs/GITHUB_PAGES.md](docs/GITHUB_PAGES.md). 정식 엔진은 Three.js 모듈형 소스만 유지한다. preview/index.html은 이전 단일 HTML 보존본이다. GitHub Actions에서 빌드하며 플레이어 설치는 필요 없다. 실제 배포 전 상태.
+
+DEM 취득 및 배포: docs/TERRAIN_DATA_SOURCES.md 참조.

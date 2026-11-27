@@ -1,0 +1,1 @@
+export function projection(bounds,size=1200){const [w,s,e,n]=bounds;const rad=Math.PI/180;const width=(e-w)*rad*6371008.8*Math.cos((s+n)/2*rad),depth=(n-s)*rad*6371008.8,scale=size/Math.max(width,depth);return {width:width*scale,depth:depth*scale,scale,toWorld(lon,lat){return [(lon-w)/(e-w)*width*scale-width*scale/2,(n-lat)/(n-s)*depth*scale-depth*scale/2]}}}
