@@ -1,0 +1,19 @@
+name: Prepare actual DEM
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy==1.26.4 rasterio==1.4.3
+      - run: python tools/terrain/prepare_dem.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: henan-central
+          path: public/assets/terrain/henan-central/
