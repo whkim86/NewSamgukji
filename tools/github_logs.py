@@ -1,5 +1,6 @@
 """Download Actions logs with credentials limited to api.github.com."""
-import json,subprocess,base64,urllib.request,urllib.error,pathlib,zipfile,re
+import json,subprocess,base64,urllib.request,urllib.error,pathlib,zipfile,re,sys
+sys.stdout.reconfigure(encoding='utf-8')
 root=pathlib.Path(__file__).resolve().parents[1]
 run=json.loads((root/'verification/github-actions.json').read_text())[0]
 c=subprocess.run(['git','credential','fill'],input='protocol=https\nhost=github.com\n\n',text=True,capture_output=True,check=True)
@@ -15,5 +16,5 @@ except urllib.error.HTTPError as e:
 p=root/f"verification/ci-{run['id']}.zip";p.write_bytes(data)
 with zipfile.ZipFile(p) as z:
  for name in z.namelist():
-  if 'Browser tools' in name:
+  if 'Browser tools' in name or 'Browser integration' in name:
    lines=z.read(name).decode('utf-8',errors='replace').splitlines();print('\n'.join(lines[-55:]))
