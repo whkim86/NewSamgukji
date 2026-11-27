@@ -1,0 +1,2 @@
+export function riverX(z){return 65+95*Math.sin(z/180)+25*Math.sin(z/65)}
+export function heightAt(x,z){const ridge=(cx,cz,sx,sz,h)=>h*Math.exp(-(((x-cx)/sx)**2)-((z-cz)/sz)**2);const hills=ridge(-340,-240,145,310,155)+ridge(350,260,155,220,110)+ridge(-430,330,100,130,65);const rough=(Math.sin(x*.043)*Math.cos(z*.036)+Math.sin(x*.091+z*.067)*.35)*Math.min(12,2+hills*.09);const d=Math.abs(x-riverX(z));const blend=Math.min(1,Math.max(0,(d-15)/35));return -5+(9+hills+rough)*blend;}

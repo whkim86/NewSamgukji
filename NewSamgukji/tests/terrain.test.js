@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {heightAt,riverX} from '../src/terrain/height.js';
+test('river bed below water',()=>{for(let z=-600;z<=600;z+=5)assert.equal(heightAt(riverX(z),z),-5)});test('finite terrain',()=>{for(let x=-600;x<=600;x+=10)for(let z=-600;z<=600;z+=10)assert.ok(Number.isFinite(heightAt(x,z)))});test('mountain rises above plain',()=>assert.ok(heightAt(-340,-240)>100));
